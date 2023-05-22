@@ -3,18 +3,25 @@ import React from "react";
 class MyComponent extends React.Component {
   //
   state = {
-    //la 1 object
-    name: "Miki Tran TNC",
-    channel: "Chignugg",
+    firstName: "",
+    lastName: "",
   };
-  handleOnChangeName = (event) => {
+
+  handleChangeFirstName = (event) => {
     this.setState({
-      name: event.target.value,
+      firstName: event.target.value,
     });
   };
 
-  handleClickButton = () => {
-    alert(`Click me button`);
+  handleChangeLastName = (event) => {
+    this.setState({
+      lastName: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault(); //khong submit page
+    console.log(`>>check state: `, this.state);
   };
   render() {
     console.log(`>>>kiem tra state now: `, this.state);
@@ -22,27 +29,30 @@ class MyComponent extends React.Component {
       // <div className="miki">
       // <React.Fragment> --> using fragment <></>
       <>
-        <div className="first">
-          Hello this is my component, - State Variable:
-          {this.state.name} <hr />
+        <form>
+          <label htmlFor="fname">First name:</label>
+          <br />
           <input
             type="text"
-            value={this.state.name}
-            onChange={(event) => this.handleOnChangeName(event)}
+            value={this.state.firstName}
+            onChange={(event) => this.handleChangeFirstName(event)}
           />
-        </div>
-        <div className="second">khoi div 2, {this.state.channel}</div>
-        {/* </React.Fragment> */}
-        {/* // </div> */}
-        <div className="third">
-          <button
-            onClick={() => {
-              this.handleClickButton();
-            }}
-          >
-            Click me
-          </button>
-        </div>
+          <br />
+          <label htmlFor="lname">Last name:</label>
+          <br />
+          <input
+            type="text"
+            value={this.state.lastName}
+            onChange={(event) => this.handleChangeLastName(event)}
+          />
+          <br />
+          <br />
+          <input
+            type="button"
+            value="Submit"
+            onClick={(event) => this.handleSubmit(event)}
+          />
+        </form>
       </>
     );
   }
