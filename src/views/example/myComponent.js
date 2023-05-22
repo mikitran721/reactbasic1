@@ -7,20 +7,42 @@ class MyComponent extends React.Component {
     name: "Miki Tran TNC",
     channel: "Chignugg",
   };
+  handleOnChangeName = (event) => {
+    this.setState({
+      name: event.target.value,
+    });
+  };
+
+  handleClickButton = () => {
+    alert(`Click me button`);
+  };
   render() {
-    let name = "Miki Tran variable";
+    console.log(`>>>kiem tra state now: `, this.state);
     return (
       // <div className="miki">
       // <React.Fragment> --> using fragment <></>
       <>
         <div className="first">
-          {console.log(`>>Data inside html`, name)}
-          Hello this is my component, miki tran; Name - State Variable:
-          {this.state.name}
+          Hello this is my component, - State Variable:
+          {this.state.name} <hr />
+          <input
+            type="text"
+            value={this.state.name}
+            onChange={(event) => this.handleOnChangeName(event)}
+          />
         </div>
         <div className="second">khoi div 2, {this.state.channel}</div>
         {/* </React.Fragment> */}
         {/* // </div> */}
+        <div className="third">
+          <button
+            onClick={() => {
+              this.handleClickButton();
+            }}
+          >
+            Click me
+          </button>
+        </div>
       </>
     );
   }
