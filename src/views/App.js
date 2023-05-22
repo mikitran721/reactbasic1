@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import MyComponent from "./example/myComponent.js";
+import MyComponent from "./example/MyComponent.js";
 
 const App = () => {
   // function App() {
