@@ -1,7 +1,9 @@
 import logo from "./logo.svg";
 import "./App.scss";
 import MyComponent from "./example/MyComponent.js";
-
+/**
+ * 2 component: class compt & function comp
+ */
 const App = () => {
   // function App() {
   // JSX - ma
