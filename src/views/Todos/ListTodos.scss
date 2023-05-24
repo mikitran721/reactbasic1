@@ -1,0 +1,28 @@
+.list-todo-container{
+    button{
+        cursor: pointer;
+    }
+    .add-todo{
+        margin: 0 auto;
+        .add{
+            background-color: aqua;
+            margin: 0 10px;
+        }
+    }
+    .list-todo-content{
+        width: 400px;
+        margin: 0 auto;
+
+        .todo-child{
+            height: 40px;
+            border-bottom: 1px solid rgb(59, 215, 220);
+            margin: 10px;
+            button{
+                margin: 5px;
+            }
+            &:first-child{
+                border-top: 1px solid rgb(232, 21, 123);
+            }
+        }
+    }
+}
