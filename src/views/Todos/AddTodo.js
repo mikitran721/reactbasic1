@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 class AddTodo extends React.Component {
   //
@@ -14,7 +15,8 @@ class AddTodo extends React.Component {
 
   handleAddTodo = () => {
     if (!this.state.title) {
-      alert("Missing required value");
+      // alert("Missing required value");
+      toast.error("Missing required value");
       return;
     }
     let todo = {
