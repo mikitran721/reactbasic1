@@ -10,6 +10,7 @@ import Home from "./example/Home";
 import { Route, Routes } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import About from "./example/About";
+import UserList from "./Users/UserList";
 
 /**
  * 2 component: class compt & function comp
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/todo/*" element={<ListTodo />} />
           <Route path="/works/*" element={<MyComponent />} />
           <Route path="/about/*" element={<About />} />
+          <Route path="/user/*" element={<UserList />} />
         </Routes>
         {/* <RouterProvider router={router} /> */}
 
