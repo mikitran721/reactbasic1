@@ -63,6 +63,7 @@ class ListTodo extends React.Component {
       editTodo: editTodoCopy,
     });
   };
+
   render() {
     let { listTodos, editTodo } = this.state;
     let isEmptyObj = Object.keys(editTodo).length === 0;
@@ -74,60 +75,63 @@ class ListTodo extends React.Component {
     );
 
     return (
-      <div className="list-todo-container">
-        <AddTodo addNewTodo={this.addNewTodo} />
-        <div className="list-todo-content">
-          {listTodos &&
-            listTodos.length > 0 &&
-            listTodos.map((item, index) => {
-              return (
-                <div className="todo-child" key={item.id}>
-                  {isEmptyObj === true ? (
-                    <span>
-                      {index + 1} - {item.title}
-                    </span>
-                  ) : (
-                    <>
-                      {editTodo.id === item.id ? (
-                        <span>
-                          {index + 1} -{" "}
-                          <input
-                            value={editTodo.title}
-                            onChange={(event) => {
-                              this.handleOnChangeEditTodo(event);
-                            }}
-                          />
-                        </span>
-                      ) : (
-                        <span>
-                          {index + 1} - {item.title}
-                        </span>
-                      )}
-                    </>
-                  )}
-                  <button
-                    className="edit"
-                    onClick={() => {
-                      this.handleEditTodo(item);
-                    }}
-                  >
-                    {isEmptyObj === false && editTodo.id === item.id
-                      ? "Save"
-                      : "Edit"}
-                  </button>
-                  <button
-                    className="delete"
-                    onClick={(item) => {
-                      this.handleDeleteTodo(item);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-              );
-            })}
+      <>
+        <p>Simple Todo Apps with ReactJS (MikiTran &amp; Chignugg)</p>
+        <div className="list-todo-container">
+          <AddTodo addNewTodo={this.addNewTodo} />
+          <div className="list-todo-content">
+            {listTodos &&
+              listTodos.length > 0 &&
+              listTodos.map((item, index) => {
+                return (
+                  <div className="todo-child" key={item.id}>
+                    {isEmptyObj === true ? (
+                      <span>
+                        {index + 1} - {item.title}
+                      </span>
+                    ) : (
+                      <>
+                        {editTodo.id === item.id ? (
+                          <span>
+                            {index + 1} -{" "}
+                            <input
+                              value={editTodo.title}
+                              onChange={(event) => {
+                                this.handleOnChangeEditTodo(event);
+                              }}
+                            />
+                          </span>
+                        ) : (
+                          <span>
+                            {index + 1} - {item.title}
+                          </span>
+                        )}
+                      </>
+                    )}
+                    <button
+                      className="edit"
+                      onClick={() => {
+                        this.handleEditTodo(item);
+                      }}
+                    >
+                      {isEmptyObj === false && editTodo.id === item.id
+                        ? "Save"
+                        : "Edit"}
+                    </button>
+                    <button
+                      className="delete"
+                      onClick={(item) => {
+                        this.handleDeleteTodo(item);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                );
+              })}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
