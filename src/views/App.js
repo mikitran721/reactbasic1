@@ -42,6 +42,7 @@ const App = () => {
   // function App() {
   // JSX - ma
   return (
+    // <BrowserRouter>
     <div className="App">
       <header className="App-header">
         <Nav />
@@ -69,6 +70,7 @@ const App = () => {
         theme="colored"
       />
     </div>
+    // </BrowserRouter>
   );
 };
 

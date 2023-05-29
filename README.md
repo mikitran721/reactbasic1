@@ -9,5 +9,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Xây dựng Class component & function component
 - CRUD với Todos & Works (using data via array)
 - Sử dụng Toastify để thông báo Client khi thực hiện xong 1 cập nhật với CRUD.
-- sử dụng Axios: kết nối Api + services lấy data hiển thị
+- sử dụng Axios: kết nối Api + services lấy data hiển thị (theo danh sach & detail)
 - sử dụng SASS
+- su dung react-redux (ko sd redux-toolkit)
